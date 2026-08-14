@@ -8,7 +8,8 @@
         "php": ">=7.4",
         "ext-dom": "*",
         "ext-mbstring": "*",
-        "dompdf/dompdf": "^3.0"
+        "dompdf/dompdf": "^3.0",
+        "sabberworm/php-css-parser": "^8.4 <9"
     },
     "autoload": {
         "psr-4": {
