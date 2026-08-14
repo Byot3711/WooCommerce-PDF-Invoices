@@ -7,7 +7,6 @@
  * Requires PHP:      7.4
  * WC requires at least: 6.0
  * WC tested up to:   9.5
- * Requires Plugins:  woocommerce
  * Author:            Woo PDF Invoice
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
