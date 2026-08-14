@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+.phpunit.result.cache
+.idea/
+.vscode/
+*.swp
+.env
+.env.*
+!vendor/

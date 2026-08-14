@@ -1,0 +1,33 @@
+/**
+ * WooCommerce PDF Invoices — admin styles.
+ *
+ * @package WooPdfInvoice
+ */
+
+.wpi-settings h2 {
+	margin-top: 1.6em;
+}
+
+.wpi-logo-field .wpi-logo-preview {
+	margin-bottom: 8px;
+}
+
+.wpi-logo-field .wpi-logo-preview img {
+	display: block;
+	max-width: 220px;
+	height: auto;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.wpi-metabox .wpi-metabox-actions {
+	margin-top: 10px;
+}
+
+.wpi-metabox .wpi-invoice-date {
+	color: #646970;
+}
+
+.wpi-metabox .wpi-no-invoice {
+	color: #b32d2e;
+}
