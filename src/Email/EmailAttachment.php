@@ -177,7 +177,7 @@ final class EmailAttachment {
 		if ( function_exists( 'wc_get_logger' ) ) {
 			wc_get_logger()->warning(
 				sprintf( 'Invoice attachment failed for %s: %s', $email_id, $message ),
-				array( 'source' => 'woo-pdf-invoice' )
+				array( 'source' => 'sequential-pdf-invoices' )
 			);
 
 			return;

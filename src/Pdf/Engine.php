@@ -46,7 +46,7 @@ final class Engine {
 	public function generate( string $html, ?string $paper = null, ?string $orientation = null ): string {
 		if ( ! class_exists( Dompdf::class ) ) {
 			throw new \RuntimeException(
-				esc_html__( 'PDF engine is missing. Run `composer install` inside the plugin folder.', 'woo-pdf-invoice' )
+				esc_html__( 'PDF engine is missing. Run `composer install` inside the plugin folder.', 'sequential-pdf-invoices' )
 			);
 		}
 

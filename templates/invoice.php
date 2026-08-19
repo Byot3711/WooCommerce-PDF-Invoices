@@ -120,7 +120,7 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 				<div><?php echo esc_html( $seller_name ); ?></div>
 			</td>
 			<td class="invoice-title">
-				<?php echo esc_html__( 'INVOICE', 'woo-pdf-invoice' ); ?><br />
+				<?php echo esc_html__( 'INVOICE', 'sequential-pdf-invoices' ); ?><br />
 				<span class="invoice-number"><?php echo esc_html( $invoice_number ); ?></span>
 			</td>
 		</tr>
@@ -134,10 +134,10 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 					<?php if ( '' !== $city_line ) : ?><?php echo esc_html( $city_line ); ?><br /><?php endif; ?>
 					<?php if ( '' !== $company['country'] ) : ?><?php echo esc_html( $company['country'] ); ?><br /><?php endif; ?>
 					<?php if ( '' !== $company['tax_id'] ) : ?>
-						<?php echo esc_html__( 'VAT / CUI', 'woo-pdf-invoice' ); ?>: <?php echo esc_html( $company['tax_id'] ); ?><br />
+						<?php echo esc_html__( 'VAT / CUI', 'sequential-pdf-invoices' ); ?>: <?php echo esc_html( $company['tax_id'] ); ?><br />
 					<?php endif; ?>
 					<?php if ( '' !== $company['reg_no'] ) : ?>
-						<?php echo esc_html__( 'Reg. no.', 'woo-pdf-invoice' ); ?>: <?php echo esc_html( $company['reg_no'] ); ?><br />
+						<?php echo esc_html__( 'Reg. no.', 'sequential-pdf-invoices' ); ?>: <?php echo esc_html( $company['reg_no'] ); ?><br />
 					<?php endif; ?>
 					<?php if ( '' !== $company['email'] ) : ?><?php echo esc_html( $company['email'] ); ?><br /><?php endif; ?>
 					<?php if ( '' !== $company['phone'] ) : ?><?php echo esc_html( $company['phone'] ); ?><?php endif; ?>
@@ -146,26 +146,26 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 			<td>
 				<table class="meta-table">
 					<tr>
-						<td class="label"><?php echo esc_html__( 'Issue date', 'woo-pdf-invoice' ); ?></td>
+						<td class="label"><?php echo esc_html__( 'Issue date', 'sequential-pdf-invoices' ); ?></td>
 						<td><?php echo esc_html( $invoice_date ); ?></td>
 					</tr>
 					<?php if ( $due_date ) : ?>
 						<tr>
-							<td class="label"><?php echo esc_html__( 'Due date', 'woo-pdf-invoice' ); ?></td>
+							<td class="label"><?php echo esc_html__( 'Due date', 'sequential-pdf-invoices' ); ?></td>
 							<td><?php echo esc_html( $due_date ); ?></td>
 						</tr>
 					<?php endif; ?>
 					<tr>
-						<td class="label"><?php echo esc_html__( 'Order', 'woo-pdf-invoice' ); ?></td>
+						<td class="label"><?php echo esc_html__( 'Order', 'sequential-pdf-invoices' ); ?></td>
 						<td><?php echo esc_html( $order_number ); ?></td>
 					</tr>
 					<tr>
-						<td class="label"><?php echo esc_html__( 'Order date', 'woo-pdf-invoice' ); ?></td>
+						<td class="label"><?php echo esc_html__( 'Order date', 'sequential-pdf-invoices' ); ?></td>
 						<td><?php echo esc_html( $order_date ); ?></td>
 					</tr>
 					<?php if ( $payment_method ) : ?>
 						<tr>
-							<td class="label"><?php echo esc_html__( 'Payment method', 'woo-pdf-invoice' ); ?></td>
+							<td class="label"><?php echo esc_html__( 'Payment method', 'sequential-pdf-invoices' ); ?></td>
 							<td><?php echo esc_html( $payment_method ); ?></td>
 						</tr>
 					<?php endif; ?>
@@ -178,13 +178,13 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 		<tr>
 			<td>
 				<div class="address-box">
-					<h3><?php echo esc_html__( 'Bill to', 'woo-pdf-invoice' ); ?></h3>
+					<h3><?php echo esc_html__( 'Bill to', 'sequential-pdf-invoices' ); ?></h3>
 					<?php echo $billing; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</td>
 			<td>
 				<div class="address-box">
-					<h3><?php echo esc_html__( 'Ship to', 'woo-pdf-invoice' ); ?></h3>
+					<h3><?php echo esc_html__( 'Ship to', 'sequential-pdf-invoices' ); ?></h3>
 					<?php echo $shipping; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</td>
@@ -194,11 +194,11 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 	<table class="items">
 		<thead>
 			<tr>
-				<th><?php echo esc_html__( 'Product', 'woo-pdf-invoice' ); ?></th>
-				<th><?php echo esc_html__( 'SKU', 'woo-pdf-invoice' ); ?></th>
-				<th class="num"><?php echo esc_html__( 'Qty', 'woo-pdf-invoice' ); ?></th>
-				<th class="num"><?php echo esc_html__( 'Unit price', 'woo-pdf-invoice' ); ?></th>
-				<th class="num"><?php echo esc_html__( 'Amount', 'woo-pdf-invoice' ); ?></th>
+				<th><?php echo esc_html__( 'Product', 'sequential-pdf-invoices' ); ?></th>
+				<th><?php echo esc_html__( 'SKU', 'sequential-pdf-invoices' ); ?></th>
+				<th class="num"><?php echo esc_html__( 'Qty', 'sequential-pdf-invoices' ); ?></th>
+				<th class="num"><?php echo esc_html__( 'Unit price', 'sequential-pdf-invoices' ); ?></th>
+				<th class="num"><?php echo esc_html__( 'Amount', 'sequential-pdf-invoices' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -230,7 +230,7 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 			<?php
 			printf(
 				/* translators: %1$s: tax label, %2$s: formatted tax amount */
-				esc_html__( 'Prices include %1$s: %2$s', 'woo-pdf-invoice' ),
+				esc_html__( 'Prices include %1$s: %2$s', 'sequential-pdf-invoices' ),
 				esc_html( $tax_label ),
 				esc_html( $tax_amount )
 			);
@@ -240,12 +240,12 @@ $city_line   = trim( $company['postcode'] . ' ' . $company['city'] );
 
 	<?php if ( '' !== $company['bank'] || '' !== $company['iban'] ) : ?>
 		<div class="payment-details">
-			<strong><?php echo esc_html__( 'Payment details', 'woo-pdf-invoice' ); ?></strong><br />
+			<strong><?php echo esc_html__( 'Payment details', 'sequential-pdf-invoices' ); ?></strong><br />
 			<?php if ( '' !== $company['bank'] ) : ?>
-				<?php echo esc_html__( 'Bank', 'woo-pdf-invoice' ); ?>: <?php echo esc_html( $company['bank'] ); ?><br />
+				<?php echo esc_html__( 'Bank', 'sequential-pdf-invoices' ); ?>: <?php echo esc_html( $company['bank'] ); ?><br />
 			<?php endif; ?>
 			<?php if ( '' !== $company['iban'] ) : ?>
-				<?php echo esc_html__( 'IBAN', 'woo-pdf-invoice' ); ?>: <?php echo esc_html( $company['iban'] ); ?>
+				<?php echo esc_html__( 'IBAN', 'sequential-pdf-invoices' ); ?>: <?php echo esc_html( $company['iban'] ); ?>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

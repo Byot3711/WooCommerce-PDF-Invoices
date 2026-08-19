@@ -10,8 +10,7 @@
  * Author:            Woo PDF Invoice
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       woo-pdf-invoice
- * Domain Path:       /languages
+ * Text Domain:       sequential-pdf-invoices
  *
  * @package WooPdfInvoice
  */
@@ -74,7 +73,7 @@ function wpi_boot(): void {
 			'admin_notices',
 			static function (): void {
 				echo '<div class="notice notice-error"><p>';
-				echo esc_html__( 'Sequential PDF Invoices requires WooCommerce to be installed and active.', 'woo-pdf-invoice' );
+				echo esc_html__( 'Sequential PDF Invoices requires WooCommerce to be installed and active.', 'sequential-pdf-invoices' );
 				echo '</p></div>';
 			}
 		);

@@ -59,7 +59,7 @@ final class Settings {
 			'invoice_padding'   => 4,
 			'invoice_due_days'  => 15,
 			'invoice_footer'    => '',
-			'tax_label'         => __( 'VAT', 'woo-pdf-invoice' ),
+			'tax_label'         => __( 'VAT', 'sequential-pdf-invoices' ),
 			'pdf_paper_size'    => 'A4',
 			'pdf_orientation'   => 'portrait',
 			'attach_emails'     => array( 'customer_processing_order', 'customer_completed_order' ),
@@ -114,8 +114,8 @@ final class Settings {
 	public function register_page(): void {
 		add_submenu_page(
 			'woocommerce',
-			__( 'PDF Invoices', 'woo-pdf-invoice' ),
-			__( 'PDF Invoices', 'woo-pdf-invoice' ),
+			__( 'PDF Invoices', 'sequential-pdf-invoices' ),
+			__( 'PDF Invoices', 'sequential-pdf-invoices' ),
 			'manage_woocommerce',
 			self::PAGE,
 			array( $this, 'render_page' )
@@ -155,9 +155,9 @@ final class Settings {
 			'wpi-admin',
 			'wpiAdmin',
 			array(
-				'logoTitle'     => __( 'Select logo', 'woo-pdf-invoice' ),
-				'useThisImage'  => __( 'Use this image', 'woo-pdf-invoice' ),
-				'deleteConfirm' => __( 'Delete this invoice? This action cannot be undone.', 'woo-pdf-invoice' ),
+				'logoTitle'     => __( 'Select logo', 'sequential-pdf-invoices' ),
+				'useThisImage'  => __( 'Use this image', 'sequential-pdf-invoices' ),
+				'deleteConfirm' => __( 'Delete this invoice? This action cannot be undone.', 'sequential-pdf-invoices' ),
 			)
 		);
 	}
@@ -190,34 +190,34 @@ final class Settings {
 	private function add_sections(): void {
 		add_settings_section(
 			'wpi_company',
-			__( 'Company details', 'woo-pdf-invoice' ),
+			__( 'Company details', 'sequential-pdf-invoices' ),
 			static function (): void {
-				echo '<p>' . esc_html__( 'These details appear in the invoice header and footer.', 'woo-pdf-invoice' ) . '</p>';
+				echo '<p>' . esc_html__( 'These details appear in the invoice header and footer.', 'sequential-pdf-invoices' ) . '</p>';
 			},
 			self::PAGE
 		);
 
 		add_settings_section(
 			'wpi_numbering',
-			__( 'Invoice numbering', 'woo-pdf-invoice' ),
+			__( 'Invoice numbering', 'sequential-pdf-invoices' ),
 			static function (): void {
-				echo '<p>' . esc_html__( 'Control the sequential invoice number format.', 'woo-pdf-invoice' ) . '</p>';
+				echo '<p>' . esc_html__( 'Control the sequential invoice number format.', 'sequential-pdf-invoices' ) . '</p>';
 			},
 			self::PAGE
 		);
 
 		add_settings_section(
 			'wpi_pdf',
-			__( 'PDF & appearance', 'woo-pdf-invoice' ),
+			__( 'PDF & appearance', 'sequential-pdf-invoices' ),
 			null,
 			self::PAGE
 		);
 
 		add_settings_section(
 			'wpi_email',
-			__( 'Emails', 'woo-pdf-invoice' ),
+			__( 'Emails', 'sequential-pdf-invoices' ),
 			static function (): void {
-				echo '<p>' . esc_html__( 'Attach the invoice PDF to the selected customer emails.', 'woo-pdf-invoice' ) . '</p>';
+				echo '<p>' . esc_html__( 'Attach the invoice PDF to the selected customer emails.', 'sequential-pdf-invoices' ) . '</p>';
 			},
 			self::PAGE
 		);
@@ -230,17 +230,17 @@ final class Settings {
 	 */
 	private function add_fields(): void {
 		$texts = array(
-			'company_name'      => array( 'wpi_company', __( 'Company name', 'woo-pdf-invoice' ) ),
-			'company_address'   => array( 'wpi_company', __( 'Address', 'woo-pdf-invoice' ) ),
-			'company_city'      => array( 'wpi_company', __( 'City', 'woo-pdf-invoice' ) ),
-			'company_postcode'  => array( 'wpi_company', __( 'Postcode', 'woo-pdf-invoice' ) ),
-			'company_country'   => array( 'wpi_company', __( 'Country', 'woo-pdf-invoice' ) ),
-			'company_tax_id'    => array( 'wpi_company', __( 'Tax ID / VAT (CUI)', 'woo-pdf-invoice' ) ),
-			'company_reg_no'    => array( 'wpi_company', __( 'Trade register no.', 'woo-pdf-invoice' ) ),
-			'company_email'     => array( 'wpi_company', __( 'Email', 'woo-pdf-invoice' ) ),
-			'company_phone'     => array( 'wpi_company', __( 'Phone', 'woo-pdf-invoice' ) ),
-			'company_bank'      => array( 'wpi_company', __( 'Bank', 'woo-pdf-invoice' ) ),
-			'company_iban'      => array( 'wpi_company', __( 'IBAN', 'woo-pdf-invoice' ) ),
+			'company_name'      => array( 'wpi_company', __( 'Company name', 'sequential-pdf-invoices' ) ),
+			'company_address'   => array( 'wpi_company', __( 'Address', 'sequential-pdf-invoices' ) ),
+			'company_city'      => array( 'wpi_company', __( 'City', 'sequential-pdf-invoices' ) ),
+			'company_postcode'  => array( 'wpi_company', __( 'Postcode', 'sequential-pdf-invoices' ) ),
+			'company_country'   => array( 'wpi_company', __( 'Country', 'sequential-pdf-invoices' ) ),
+			'company_tax_id'    => array( 'wpi_company', __( 'Tax ID / VAT (CUI)', 'sequential-pdf-invoices' ) ),
+			'company_reg_no'    => array( 'wpi_company', __( 'Trade register no.', 'sequential-pdf-invoices' ) ),
+			'company_email'     => array( 'wpi_company', __( 'Email', 'sequential-pdf-invoices' ) ),
+			'company_phone'     => array( 'wpi_company', __( 'Phone', 'sequential-pdf-invoices' ) ),
+			'company_bank'      => array( 'wpi_company', __( 'Bank', 'sequential-pdf-invoices' ) ),
+			'company_iban'      => array( 'wpi_company', __( 'IBAN', 'sequential-pdf-invoices' ) ),
 		);
 
 		foreach ( $texts as $key => $cfg ) {
@@ -259,7 +259,7 @@ final class Settings {
 
 		add_settings_field(
 			'company_logo',
-			__( 'Logo', 'woo-pdf-invoice' ),
+			__( 'Logo', 'sequential-pdf-invoices' ),
 			array( $this, 'field_logo' ),
 			self::PAGE,
 			'wpi_company',
@@ -268,7 +268,7 @@ final class Settings {
 
 		add_settings_field(
 			'invoice_prefix',
-			__( 'Prefix', 'woo-pdf-invoice' ),
+			__( 'Prefix', 'sequential-pdf-invoices' ),
 			array( $this, 'field_text' ),
 			self::PAGE,
 			'wpi_numbering',
@@ -277,7 +277,7 @@ final class Settings {
 
 		add_settings_field(
 			'invoice_suffix',
-			__( 'Suffix', 'woo-pdf-invoice' ),
+			__( 'Suffix', 'sequential-pdf-invoices' ),
 			array( $this, 'field_text' ),
 			self::PAGE,
 			'wpi_numbering',
@@ -286,7 +286,7 @@ final class Settings {
 
 		add_settings_field(
 			'invoice_padding',
-			__( 'Number padding', 'woo-pdf-invoice' ),
+			__( 'Number padding', 'sequential-pdf-invoices' ),
 			array( $this, 'field_number' ),
 			self::PAGE,
 			'wpi_numbering',
@@ -295,13 +295,13 @@ final class Settings {
 				'key'       => 'invoice_padding',
 				'min'       => 1,
 				'max'       => 12,
-				'help'      => __( 'Zeros before the number, e.g. 4 -> F-0001.', 'woo-pdf-invoice' ),
+				'help'      => __( 'Zeros before the number, e.g. 4 -> F-0001.', 'sequential-pdf-invoices' ),
 			)
 		);
 
 		add_settings_field(
 			'invoice_due_days',
-			__( 'Payment due (days)', 'woo-pdf-invoice' ),
+			__( 'Payment due (days)', 'sequential-pdf-invoices' ),
 			array( $this, 'field_number' ),
 			self::PAGE,
 			'wpi_numbering',
@@ -310,13 +310,13 @@ final class Settings {
 				'key'       => 'invoice_due_days',
 				'min'       => 0,
 				'max'       => 365,
-				'help'      => __( '0 hides the due date.', 'woo-pdf-invoice' ),
+				'help'      => __( '0 hides the due date.', 'sequential-pdf-invoices' ),
 			)
 		);
 
 		add_settings_field(
 			'pdf_paper_size',
-			__( 'Paper size', 'woo-pdf-invoice' ),
+			__( 'Paper size', 'sequential-pdf-invoices' ),
 			array( $this, 'field_select' ),
 			self::PAGE,
 			'wpi_pdf',
@@ -334,7 +334,7 @@ final class Settings {
 
 		add_settings_field(
 			'pdf_orientation',
-			__( 'Orientation', 'woo-pdf-invoice' ),
+			__( 'Orientation', 'sequential-pdf-invoices' ),
 			array( $this, 'field_select' ),
 			self::PAGE,
 			'wpi_pdf',
@@ -342,15 +342,15 @@ final class Settings {
 				'label_for' => 'pdf_orientation',
 				'key'       => 'pdf_orientation',
 				'options'   => array(
-					'portrait'  => __( 'Portrait', 'woo-pdf-invoice' ),
-					'landscape' => __( 'Landscape', 'woo-pdf-invoice' ),
+					'portrait'  => __( 'Portrait', 'sequential-pdf-invoices' ),
+					'landscape' => __( 'Landscape', 'sequential-pdf-invoices' ),
 				),
 			)
 		);
 
 		add_settings_field(
 			'tax_label',
-			__( 'Tax label', 'woo-pdf-invoice' ),
+			__( 'Tax label', 'sequential-pdf-invoices' ),
 			array( $this, 'field_text' ),
 			self::PAGE,
 			'wpi_pdf',
@@ -359,20 +359,20 @@ final class Settings {
 
 		add_settings_field(
 			'invoice_footer',
-			__( 'Footer text', 'woo-pdf-invoice' ),
+			__( 'Footer text', 'sequential-pdf-invoices' ),
 			array( $this, 'field_textarea' ),
 			self::PAGE,
 			'wpi_pdf',
 			array(
 				'label_for' => 'invoice_footer',
 				'key'       => 'invoice_footer',
-				'help'      => __( 'Payment terms, thank-you note, etc. Basic HTML allowed.', 'woo-pdf-invoice' ),
+				'help'      => __( 'Payment terms, thank-you note, etc. Basic HTML allowed.', 'sequential-pdf-invoices' ),
 			)
 		);
 
 		add_settings_field(
 			'attach_emails',
-			__( 'Attach to emails', 'woo-pdf-invoice' ),
+			__( 'Attach to emails', 'sequential-pdf-invoices' ),
 			array( $this, 'field_emails' ),
 			self::PAGE,
 			'wpi_email',
@@ -391,7 +391,7 @@ final class Settings {
 		}
 
 		echo '<div class="wrap wpi-settings">';
-		echo '<h1>' . esc_html__( 'Sequential PDF Invoices', 'woo-pdf-invoice' ) . '</h1>';
+		echo '<h1>' . esc_html__( 'Sequential PDF Invoices', 'sequential-pdf-invoices' ) . '</h1>';
 
 		echo '<form action="options.php" method="post">';
 		settings_fields( self::GROUP );
@@ -519,15 +519,15 @@ final class Settings {
 		echo '<p>';
 		printf(
 			'<button type="button" class="button wpi-select-logo">%s</button> ',
-			esc_html__( 'Select logo', 'woo-pdf-invoice' )
+			esc_html__( 'Select logo', 'sequential-pdf-invoices' )
 		);
 		printf(
 			'<button type="button" class="button-link-delete wpi-remove-logo">%s</button>',
-			esc_html__( 'Remove', 'woo-pdf-invoice' )
+			esc_html__( 'Remove', 'sequential-pdf-invoices' )
 		);
 		echo '</p>';
 
-		echo '<p class="description">' . esc_html__( 'Recommended: PNG or JPG, max ~800px wide.', 'woo-pdf-invoice' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'Recommended: PNG or JPG, max ~800px wide.', 'sequential-pdf-invoices' ) . '</p>';
 		echo '</div>';
 	}
 
@@ -558,10 +558,10 @@ final class Settings {
 	 */
 	private function available_emails(): array {
 		return array(
-			'customer_processing_order' => __( 'Processing order', 'woo-pdf-invoice' ),
-			'customer_completed_order'  => __( 'Completed order', 'woo-pdf-invoice' ),
-			'customer_on_hold_order'    => __( 'On-hold order', 'woo-pdf-invoice' ),
-			'customer_invoice'          => __( 'Customer invoice / payment request', 'woo-pdf-invoice' ),
+			'customer_processing_order' => __( 'Processing order', 'sequential-pdf-invoices' ),
+			'customer_completed_order'  => __( 'Completed order', 'sequential-pdf-invoices' ),
+			'customer_on_hold_order'    => __( 'On-hold order', 'sequential-pdf-invoices' ),
+			'customer_invoice'          => __( 'Customer invoice / payment request', 'sequential-pdf-invoices' ),
 		);
 	}
 

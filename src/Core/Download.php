@@ -111,11 +111,11 @@ final class Download {
 		$order = wc_get_order( $order_id );
 
 		if ( ! $order ) {
-			$this->deny( __( 'Order not found.', 'woo-pdf-invoice' ) );
+			$this->deny( __( 'Order not found.', 'sequential-pdf-invoices' ) );
 		}
 
 		if ( ! $this->is_authorized( $order ) ) {
-			$this->deny( __( 'You are not allowed to view this invoice.', 'woo-pdf-invoice' ), 403 );
+			$this->deny( __( 'You are not allowed to view this invoice.', 'sequential-pdf-invoices' ), 403 );
 		}
 
 		try {
@@ -125,7 +125,7 @@ final class Download {
 		} catch ( \Throwable $e ) {
 			$this->deny(
 				/* translators: %s: error message */
-				sprintf( __( 'Invoice could not be generated: %s', 'woo-pdf-invoice' ), $e->getMessage() ),
+				sprintf( __( 'Invoice could not be generated: %s', 'sequential-pdf-invoices' ), $e->getMessage() ),
 				500
 			);
 		}

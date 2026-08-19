@@ -59,7 +59,7 @@ final class MyAccount {
 
 		$actions['wpi_invoice'] = array(
 			'url'  => Download::url( $order->get_id() ),
-			'name' => __( 'Invoice (PDF)', 'woo-pdf-invoice' ),
+			'name' => __( 'Invoice (PDF)', 'sequential-pdf-invoices' ),
 		);
 
 		return $actions;
@@ -80,7 +80,7 @@ final class MyAccount {
 		printf(
 			'<p class="wpi-order-download"><a class="button" href="%1$s" target="_blank" rel="noopener">%2$s</a></p>',
 			esc_url( Download::url( $order->get_id() ) ),
-			esc_html__( 'Download invoice (PDF)', 'woo-pdf-invoice' )
+			esc_html__( 'Download invoice (PDF)', 'sequential-pdf-invoices' )
 		);
 	}
 }

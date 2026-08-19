@@ -144,7 +144,7 @@ final class Plugin {
 	 * @return void
 	 */
 	private function load_textdomain(): void {
-		load_plugin_textdomain( 'woo-pdf-invoice', false, dirname( WPI_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'sequential-pdf-invoices', false, dirname( WPI_BASENAME ) . '/languages' );
 	}
 
 	/**

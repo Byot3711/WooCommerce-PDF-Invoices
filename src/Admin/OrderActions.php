@@ -100,7 +100,7 @@ final class OrderActions {
 		$offset = array_search( 'order_status', array_keys( $columns ), true );
 
 		$new = array(
-			self::COLUMN => __( 'Invoice', 'woo-pdf-invoice' ),
+			self::COLUMN => __( 'Invoice', 'sequential-pdf-invoices' ),
 		);
 
 		if ( false !== $offset ) {
@@ -171,7 +171,7 @@ final class OrderActions {
 			printf(
 				'<a href="%1$s" target="_blank" rel="noopener" class="button button-small">%2$s</a>',
 				esc_url( Download::url( $order->get_id() ) ),
-				esc_html__( 'Generate', 'woo-pdf-invoice' )
+				esc_html__( 'Generate', 'sequential-pdf-invoices' )
 			);
 		}
 	}
@@ -184,7 +184,7 @@ final class OrderActions {
 	 * @return array
 	 */
 	public function bulk_actions( array $actions ): array {
-		$actions[ self::BULK_ACTION ] = __( 'Generate invoices', 'woo-pdf-invoice' );
+		$actions[ self::BULK_ACTION ] = __( 'Generate invoices', 'sequential-pdf-invoices' );
 
 		return $actions;
 	}
@@ -238,7 +238,7 @@ final class OrderActions {
 			esc_html(
 				sprintf(
 					/* translators: %d: number of invoices */
-					_n( '%d invoice generated.', '%d invoices generated.', $count, 'woo-pdf-invoice' ),
+					_n( '%d invoice generated.', '%d invoices generated.', $count, 'sequential-pdf-invoices' ),
 					$count
 				)
 			)
@@ -253,7 +253,7 @@ final class OrderActions {
 	public function add_meta_box(): void {
 		add_meta_box(
 			self::META_BOX,
-			__( 'PDF Invoice', 'woo-pdf-invoice' ),
+			__( 'PDF Invoice', 'sequential-pdf-invoices' ),
 			array( $this, 'render_meta_box' ),
 			array( 'shop_order', 'woocommerce_page_wc-orders' ),
 			'side',
@@ -272,7 +272,7 @@ final class OrderActions {
 		$order = wc_get_order( $this->order_id_from_post( $post ) );
 
 		if ( ! $order ) {
-			echo '<p>' . esc_html__( 'Order not found.', 'woo-pdf-invoice' ) . '</p>';
+			echo '<p>' . esc_html__( 'Order not found.', 'sequential-pdf-invoices' ) . '</p>';
 
 			return;
 		}
@@ -290,12 +290,12 @@ final class OrderActions {
 				esc_html( $this->format_date( $invoice->date() ) )
 			);
 		} else {
-			echo '<p class="wpi-no-invoice">' . esc_html__( 'No invoice generated yet.', 'woo-pdf-invoice' ) . '</p>';
+			echo '<p class="wpi-no-invoice">' . esc_html__( 'No invoice generated yet.', 'sequential-pdf-invoices' ) . '</p>';
 		}
 
 		printf(
 			'<label for="wpi_invoice_number">%s</label>',
-			esc_html__( 'Invoice number', 'woo-pdf-invoice' )
+			esc_html__( 'Invoice number', 'sequential-pdf-invoices' )
 		);
 
 		printf(
@@ -308,7 +308,7 @@ final class OrderActions {
 		printf(
 			'<a href="%1$s" target="_blank" rel="noopener" class="button">%2$s</a> ',
 			esc_url( Download::url( $order->get_id() ) ),
-			esc_html__( 'Download PDF', 'woo-pdf-invoice' )
+			esc_html__( 'Download PDF', 'sequential-pdf-invoices' )
 		);
 
 		if ( $invoice ) {
@@ -316,12 +316,12 @@ final class OrderActions {
 				'<button type="button" class="button-link-delete wpi-delete-invoice" data-order="%d" data-nonce="%s">%s</button>',
 				esc_attr( (string) $order->get_id() ),
 				esc_attr( wp_create_nonce( 'wpi_delete_' . $order->get_id() ) ),
-				esc_html__( 'Delete invoice', 'woo-pdf-invoice' )
+				esc_html__( 'Delete invoice', 'sequential-pdf-invoices' )
 			);
 		}
 
 		echo '</p>';
-		echo '<p class="description">' . esc_html__( 'Saving the order stores the number above.', 'woo-pdf-invoice' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'Saving the order stores the number above.', 'sequential-pdf-invoices' ) . '</p>';
 		echo '</div>';
 	}
 
@@ -362,20 +362,20 @@ final class OrderActions {
 	 */
 	public function ajax_delete(): void {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'woo-pdf-invoice' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'sequential-pdf-invoices' ) ), 403 );
 		}
 
 		$order_id = isset( $_POST['order_id'] ) ? absint( $_POST['order_id'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$nonce    = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		if ( ! $order_id || ! wp_verify_nonce( $nonce, 'wpi_delete_' . $order_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid request.', 'woo-pdf-invoice' ) ), 400 );
+			wp_send_json_error( array( 'message' => __( 'Invalid request.', 'sequential-pdf-invoices' ) ), 400 );
 		}
 
 		$order = wc_get_order( $order_id );
 
 		if ( ! $order ) {
-			wp_send_json_error( array( 'message' => __( 'Order not found.', 'woo-pdf-invoice' ) ), 404 );
+			wp_send_json_error( array( 'message' => __( 'Order not found.', 'sequential-pdf-invoices' ) ), 404 );
 		}
 
 		$this->repository->delete( $order );

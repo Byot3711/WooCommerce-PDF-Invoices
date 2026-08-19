@@ -73,7 +73,7 @@ final class Renderer {
 			),
 			'items'              => $this->items( $order ),
 			'totals'             => $this->totals( $order, $currency ),
-			'tax_label'          => (string) ( $settings['tax_label'] ?? __( 'VAT', 'woo-pdf-invoice' ) ),
+			'tax_label'          => (string) ( $settings['tax_label'] ?? __( 'VAT', 'sequential-pdf-invoices' ) ),
 			'prices_include_tax' => (bool) $order->get_prices_include_tax(),
 			'total_tax'          => (float) $order->get_total_tax(),
 			'tax_amount'         => $this->format_amount( (float) $order->get_total_tax(), $currency ),
@@ -168,33 +168,33 @@ final class Renderer {
 		$total    = (float) $order->get_total();
 
 		$totals[] = array(
-			'label' => __( 'Subtotal', 'woo-pdf-invoice' ),
+			'label' => __( 'Subtotal', 'sequential-pdf-invoices' ),
 			'value' => $this->format_amount( $subtotal, $currency ),
 		);
 
 		if ( $discount > 0 ) {
 			$totals[] = array(
-				'label' => __( 'Discount', 'woo-pdf-invoice' ),
+				'label' => __( 'Discount', 'sequential-pdf-invoices' ),
 				'value' => '-' . $this->format_amount( $discount, $currency ),
 			);
 		}
 
 		if ( $shipping > 0 ) {
 			$totals[] = array(
-				'label' => __( 'Shipping', 'woo-pdf-invoice' ),
+				'label' => __( 'Shipping', 'sequential-pdf-invoices' ),
 				'value' => $this->format_amount( $shipping, $currency ),
 			);
 		}
 
 		if ( $tax > 0 && ! $order->get_prices_include_tax() ) {
 			$totals[] = array(
-				'label' => (string) ( Settings::get()['tax_label'] ?? __( 'VAT', 'woo-pdf-invoice' ) ),
+				'label' => (string) ( Settings::get()['tax_label'] ?? __( 'VAT', 'sequential-pdf-invoices' ) ),
 				'value' => $this->format_amount( $tax, $currency ),
 			);
 		}
 
 		$totals[] = array(
-			'label'     => __( 'Total', 'woo-pdf-invoice' ),
+			'label'     => __( 'Total', 'sequential-pdf-invoices' ),
 			'value'     => $this->format_amount( $total, $currency ),
 			'highlight' => true,
 		);
