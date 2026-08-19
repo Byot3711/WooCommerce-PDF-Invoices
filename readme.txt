@@ -1,6 +1,6 @@
-=== WooCommerce PDF Invoices ===
+=== Sequential PDF Invoices ===
 Contributors: woopdfinvoice
-Tags: woocommerce, invoice, pdf, billing, factura
+Tags: invoice, pdf, billing, factura, woocommerce-compatible
 Requires at least: 6.2
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Generate professional, sequential PDF invoices for WooCommerce orders, attach them to customer emails and let customers download them from their account.
+Generate professional, sequential PDF invoices for orders, attach them to customer emails and let customers download them from their account. Compatible with WooCommerce.
 
 == Description ==
 
-WooCommerce PDF Invoices (Facturare PDF) generates clean, professional PDF invoices directly from your WooCommerce orders.
+Sequential PDF Invoices (Facturare PDF) generates clean, professional PDF invoices directly from your WooCommerce orders.
 
 Features:
 

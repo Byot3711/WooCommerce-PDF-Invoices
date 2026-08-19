@@ -1,5 +1,5 @@
 /**
- * WooCommerce PDF Invoices — admin scripts.
+ * Sequential PDF Invoices — admin scripts.
  *
  * Handles the media-library logo picker and the meta-box "delete invoice" action.
  *

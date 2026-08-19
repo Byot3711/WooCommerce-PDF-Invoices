@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       WooCommerce PDF Invoices
- * Description:       Generate professional, sequential PDF invoices for WooCommerce orders, attach them to emails and let customers download them from their account.
+ * Plugin Name:       Sequential PDF Invoices
+ * Description:       Generate professional, sequential PDF invoices for orders, attach them to emails and let customers download them from their account. Compatible with WooCommerce.
  * Version:           1.0.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
@@ -74,7 +74,7 @@ function wpi_boot(): void {
 			'admin_notices',
 			static function (): void {
 				echo '<div class="notice notice-error"><p>';
-				echo esc_html__( 'WooCommerce PDF Invoices requires WooCommerce to be installed and active.', 'woo-pdf-invoice' );
+				echo esc_html__( 'Sequential PDF Invoices requires WooCommerce to be installed and active.', 'woo-pdf-invoice' );
 				echo '</p></div>';
 			}
 		);

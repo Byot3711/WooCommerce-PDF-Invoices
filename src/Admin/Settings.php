@@ -391,7 +391,7 @@ final class Settings {
 		}
 
 		echo '<div class="wrap wpi-settings">';
-		echo '<h1>' . esc_html__( 'WooCommerce PDF Invoices', 'woo-pdf-invoice' ) . '</h1>';
+		echo '<h1>' . esc_html__( 'Sequential PDF Invoices', 'woo-pdf-invoice' ) . '</h1>';
 
 		echo '<form action="options.php" method="post">';
 		settings_fields( self::GROUP );

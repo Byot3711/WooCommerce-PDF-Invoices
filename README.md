@@ -1,6 +1,6 @@
-# WooCommerce PDF Invoices
+# Sequential PDF Invoices
 
-Generate sequential PDF invoices from WooCommerce orders, attach them to customer emails, and let customers download them from My Account.
+Generate sequential PDF invoices from orders, attach them to customer emails, and let customers download them from My Account. Compatible with WooCommerce.
 
 ## Features
 
@@ -26,7 +26,7 @@ dompdf 3.1.6 is shipped in `vendor/`. No Composer step is required to install th
 
 1. Download the repository as a ZIP, or clone it into `wp-content/plugins/woo-pdf-invoice`.
 2. Make sure WooCommerce is active.
-3. Activate **WooCommerce PDF Invoices** from the Plugins screen.
+3. Activate **Sequential PDF Invoices** from the Plugins screen.
 4. Go to **WooCommerce → PDF Invoices** and fill in company details and numbering.
 
 ## Configuration
