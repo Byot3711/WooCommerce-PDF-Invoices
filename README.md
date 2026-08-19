@@ -74,7 +74,7 @@ The plugin loads the theme file first. Styles must stay inline because the HTML 
 
 ```
 woo-pdf-invoice/
-├── woo-pdf-invoice.php
+├── sequential-pdf-invoices.php
 ├── uninstall.php
 ├── composer.json
 ├── readme.txt
